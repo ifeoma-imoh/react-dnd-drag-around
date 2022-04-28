@@ -1,0 +1,23 @@
+import { useCallback, useState } from "react";
+import { Container } from "./Container";
+
+export const Example = () => {
+  const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true);
+
+  const toggle = useCallback(
+    () => setHideSourceOnDrag(!hideSourceOnDrag),
+    [hideSourceOnDrag]
+  );
+
+  return(
+      <div>
+          <Container />
+          <form>
+              <label htmlFor="hideSourceOnDrag">
+                  <input id='hideSourceOnDrag' type='checkbox' role='checkbox' checked={hideSourceOnDrag} onChange={toggle} />
+                    <small>Hide the source item while dragging</small>
+              </label>
+          </form>
+      </div>
+  )
+};

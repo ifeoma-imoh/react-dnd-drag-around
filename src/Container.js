@@ -16,8 +16,8 @@ export const Container = ({ hideSourceOnDrag }) => {
     b: { top: 180, left: 20, title: "Meee too! Please drag me around.." },
   });
 
-  const moveBox = (id, left, top) => {
-    setBoxes({ ...boxes, [id]: { ...boxes, left, top } });
+  const moveBox = (id, top, left) => {
+    setBoxes({ ...boxes, [id]: { ...boxes[id], left, top } });
   };
   const [, drop] = useDrop(
     () => ({
